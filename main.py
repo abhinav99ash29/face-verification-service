@@ -5,8 +5,8 @@ from dbHelper import write, search
 
 app = FastAPI()
 
-@app.post("/pleiadians/users/face")
-async def register(type: str = Header(None), identityId: str = Header(None), file: UploadFile = File(...)):
+@app.post("/face/v1")
+async def register(type: str = Header(None), id: str = Header(None), file: UploadFile = File(...)):
 
     if type == 'register':
         encoding = await img2encoding(file)
